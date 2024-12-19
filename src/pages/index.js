@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css'; 
 import { format, parse, isEqual } from 'date-fns';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } from 'firebase/firestore';
@@ -19,13 +20,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const getRandomColor = () => {
-  const colors = [
-    'bg-blue-500', 'bg-green-500', 'bg-red-500', 'bg-yellow-500',
-    'bg-purple-500', 'bg-pink-500', 'bg-indigo-500', 'bg-teal-500'
-  ];
-  return colors[Math.floor(Math.random() * colors.length)];
-};
 
 const Home = () => {
   const [events, setEvents] = useState([]);
@@ -36,7 +30,7 @@ const Home = () => {
   const [isAddingTask, setIsAddingTask] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
   const [newTask, setNewTask] = useState({ subject: '', task: '', duration:'' });
-
+  const [highlightedDates, setHightlightedDares] = useState([])
   // Parse date string
   const parseDateString = (dateStr) => {
     // Match dd/mm/yy format
@@ -54,6 +48,38 @@ const Home = () => {
       return null;
     }
   };
+  const fnv1aHash = (str) => {
+    let hash = 2166136261n; // FNV-1a offset basis
+    for (let i = 0; i < str.length; i++) {
+      hash ^= BigInt(str.charCodeAt(i));
+      hash *= 16777619n; // FNV-1a prime
+    }
+    return hash;
+  };
+
+  
+  // Convert hash value to RGB color
+  const hashToRGB = (str) => {
+    const hash = fnv1aHash(str);
+  
+    // Get values for R, G, B from the hash
+    const r = Number(hash % 256n); // Red value (0-255)
+    const g = Number((hash >> 8n) % 256n); // Green value (0-255)
+    const b = Number((hash >> 16n) % 256n); // Blue value (0-255)
+  
+    return `rgb(${r}, ${g}, ${b})`; // Tailwind-compatible RGB format
+  };
+  
+  // Alternatively, convert hash to Hex
+  const hashToHex = (str) => {
+    const hash = fnv1aHash(str);
+    const r = Number(hash % 256n).toString(16).padStart(2, '0');
+    const g = Number((hash >> 8n) % 256n).toString(16).padStart(2, '0');
+    const b = Number((hash >> 16n) % 256n).toString(16).padStart(2, '0');
+  
+    return `#${r}${g}${b}`; // Hex format
+  };
+  
   
 
   // Fetch events from Firestore
@@ -65,6 +91,7 @@ const Home = () => {
         id: doc.id,
         ...doc.data()
       }));
+      
       setEvents(eventsData);
       setError(null);
     } catch (err) {
@@ -87,7 +114,7 @@ const Home = () => {
     
       if (eventForDate) {
         // Add task to existing date
-        const updatedTasks = [...eventForDate.tasks, { ...newTask, color: getRandomColor() }];
+        const updatedTasks = [...eventForDate.tasks, { ...newTask }];
         await updateDoc(doc(db, 'events', eventForDate.id), {
           tasks: updatedTasks
         });
@@ -95,7 +122,7 @@ const Home = () => {
         // Create new date entry
         await addDoc(collection(db, 'events'), {
           date: dateStr,
-          tasks: [{ ...newTask, color: getRandomColor() }]
+          tasks: [{ ...newTask}]
         });
       }
       
@@ -106,6 +133,12 @@ const Home = () => {
       setError('Failed to add task: ' + err.message);
     }
   };
+  useEffect(() => {
+     console.log(events,'sebah')
+    let highlightedDates = events.map(item => item.date);
+    console.log(highlightedDates)
+    setHightlightedDares(highlightedDates)
+  }, [events]);
 
   // Delete task
   const handleDeleteTask = async (eventId, taskIndex) => {
@@ -144,6 +177,18 @@ const Home = () => {
       setError('Failed to update task: ' + err.message);
     }
   };
+  const tileClassName = ({ date, view }) => {
+    if (view === 'month') {
+      // Format the current date as dd/mm/yy
+      const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear().toString().slice(2)}`;
+
+      // Check if the formatted date is in the highlightedDates array
+      if (highlightedDates.includes(formattedDate)) {
+        return 'highlighted'; // Add the custom class
+      }
+    }
+    return null;
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 p-4">
@@ -163,6 +208,7 @@ const Home = () => {
             <Calendar 
               onChange={setSelectedDate} 
               value={selectedDate}
+              tileClassName={tileClassName} 
               className="w-full rounded-lg"
             />
           </div>
@@ -269,7 +315,9 @@ const Home = () => {
                   ) : (
                     <div className="flex justify-between items-start">
                       <div>
-                        <span className={`inline-block px-3 py-1 rounded-full text-white text-sm ${task.color || 'bg-blue-500'} mb-2`}>
+                        <span className={`inline-block px-3 py-1 rounded-full text-white text-sm  mb-2`}
+                        style={{ backgroundColor: hashToRGB(task.subject) }}
+                        >
                           {task.subject}
                         </span>
                         <p className="text-lg">{task.task}</p>

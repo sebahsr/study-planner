@@ -100,3 +100,84 @@ li {
     @apply bg-background text-foreground;
   }
 }
+/* Container for centering the calendar */
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f7fc;
+  min-height: 100vh;
+  
+}
+
+/* Custom styles for the calendar */
+.react-calendar{
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease-in-out;
+  min-width: 100% !important;
+}
+
+/* Hover effect on calendar */
+.custom-calendar:hover {
+  transform: scale(1.05);
+}
+
+/* Styling for days of the week */
+.react-calendar__month-view__weekdays {
+  background-color: #425fff;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Custom styles for day cells */
+.react-calendar__tile {
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+/* Change color on hover */
+.react-calendar__tile:hover {
+  background-color: #81c784;
+  color: #fff;
+}
+
+/* Active day styling */
+.highlighted, .react-calendar__tile--active {
+  background-color: #a0c4e6 !important;
+  color: rgb(3, 0, 0);
+  font-weight: bold;
+}
+
+/* Styling for the current day */
+.react-calendar__tile--now {
+ 
+  background: #a9d4ff !important;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+/* Styling for navigation buttons */
+.react-calendar__navigation button {
+  background-color: #5c6bc0;
+  /* color: white; */
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect on navigation buttons */
+.react-calendar__navigation button:hover {
+  background-color: #3f51b5;
+}
