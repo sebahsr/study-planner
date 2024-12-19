@@ -1,0 +1,27 @@
+[
+    {
+      "date": "2023-12-23",
+      "subject": "Machine Learning",
+      "task": "Study Introduction to Machine Learning",
+      "duration": "1 hour"
+    },
+    {
+      "date": "2023-12-23",
+      "subject": "Machine Learning",
+      "task": "Study Local Methods (KNN)",
+      "duration": "1 hour"
+    },
+    {
+      "date": "2023-12-24",
+      "subject": "Data Warehousing",
+      "task": "Study Introduction to Data Warehousing",
+      "duration": "1 hour"
+    },
+    {
+      "date": "2023-12-24",
+      "subject": "Data Warehousing",
+      "task": "Study Data Warehouse Design Methodology",
+      "duration": "1 hour"
+    }
+  ]
+  
