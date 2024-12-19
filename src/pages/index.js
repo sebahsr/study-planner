@@ -293,6 +293,12 @@ const Home = () => {
                         onChange={(e) => setEditingTask(prev => ({ ...prev, task: e.target.value }))}
                         className="w-full p-2 border rounded"
                       />
+                       <input
+                        type="text"
+                        value={editingTask.duration}
+                        onChange={(e) => setEditingTask(prev => ({ ...prev, duration: e.target.value }))}
+                        className="w-full p-2 border rounded"
+                      />
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleUpdateTask(events.find(event => 
