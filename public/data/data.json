@@ -1,27 +1,236 @@
-[
+ [
     {
-      "date": "2023-12-23",
-      "subject": "Machine Learning",
-      "task": "Study Introduction to Machine Learning",
-      "duration": "1 hour"
+      "date": "23/12/24",
+      "tasks": [
+        {"subject": "ML", "task": "Study Introduction to Machine Learning", "duration": "1 hour"},
+        {"subject": "ML", "task": "Study Local Methods (KNN)", "duration": "1 hour"},
+        {"subject": "DWH", "task": "Study Introduction to Data Warehousing", "duration": "1 hour"},
+        {"subject": "DWH", "task": "Study Data Warehouse Design Methodology", "duration": "1 hour"}
+      ]
     },
     {
-      "date": "2023-12-23",
-      "subject": "Machine Learning",
-      "task": "Study Local Methods (KNN)",
-      "duration": "1 hour"
+      "date": "24/12/24",
+      "tasks": [
+        {"subject": "ML", "task": "Study Cross Validation", "duration": "1 hour"},
+        {"subject": "ML", "task": "Study ERM & Regularized Least Squares", "duration": "1 hour"},
+        {"subject": "DWH", "task": "Study Conceptual Design & DFM", "duration": "2 hours"}
+      ]
     },
     {
-      "date": "2023-12-24",
-      "subject": "Data Warehousing",
-      "task": "Study Introduction to Data Warehousing",
-      "duration": "1 hour"
+      "date": "25/12/24",
+      "tasks": [
+        {"subject": "ML", "task": "Study Logistic Regression & Support Vector Machines", "duration": "1 hour"},
+        {"subject": "DC", "task": "Study Introduction & Transactions (ACID, CAP)", "duration": "1.5 hours"}
+      ]
     },
     {
-      "date": "2023-12-24",
-      "subject": "Data Warehousing",
-      "task": "Study Data Warehouse Design Methodology",
-      "duration": "1 hour"
+      "date": "26/12/24",
+      "tasks": [
+        {"subject": "ML", "task": "Study Kernel Functions & Feature Maps", "duration": "2 hours"},
+        {"subject": "DWH", "task": "Study ROLAP Logical Model", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "27/12/24",
+      "tasks": [
+        {"subject": "ML", "task": "Study Neural Networks & Convolutional Neural Networks", "duration": "2 hours"},
+        {"subject": "DC", "task": "Study Consensus & Zookeeper", "duration": "1.5 hours"}
+      ]
+    },
+    {
+      "date": "28/12/24",
+      "tasks": [
+        {"subject": "ML", "task": "Study Bayesian Models", "duration": "2 hours"},
+        {"subject": "DWH", "task": "Study ROLAP Logical Design", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "29/12/24",
+      "tasks": [
+        {"subject": "ML", "task": "Study Interpretability Models: Decision Trees & Sparsity", "duration": "2 hours"},
+        {"subject": "DC", "task": "Study Google Cloud Spanner & Erasure Coding", "duration": "1.5 hours"}
+      ]
+    },
+    {
+      "date": "30/12/24",
+      "tasks": [
+        {"subject": "ML", "task": "Study Unsupervised Learning (K-Means)", "duration": "2 hours"},
+        {"subject": "DWH", "task": "Study Views & OLAP", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "31/12/24",
+      "tasks": [
+        {"subject": "Rest", "task": "No Study"}
+      ]
+    },
+    {
+      "date": "01/01/25",
+      "tasks": [
+        {"subject": "Rest", "task": "No Study"}
+      ]
+    },
+    {
+      "date": "02/01/25",
+      "tasks": [
+        {"subject": "DWH", "task": "Study Data Quality, Cleaning & Integration", "duration": "3 hours"},
+        {"subject": "DWH", "task": "Study From DW to Data Platforms", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "03/01/25",
+      "tasks": [
+        {"subject": "DWH", "task": "Study Hive", "duration": "3 hours"},
+        {"subject": "DWH", "task": "Review Views & OLAP", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "04/01/25",
+      "tasks": [
+        {"subject": "DWH", "task": "Study ETL Design", "duration": "3 hours"},
+        {"subject": "DWH", "task": "Study ROLAP Physical Design", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "05/01/25",
+      "tasks": [
+        {"subject": "DWH", "task": "Study Data Platform Transition & Hive", "duration": "3 hours"},
+        {"subject": "DWH", "task": "Review Final Topics", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "06/01/25",
+      "tasks": [
+        {"subject": "DWH", "task": "Final Review of Data Quality & ETL Design", "duration": "3 hours"},
+        {"subject": "DWH", "task": "Mock Exam Practice", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "07/01/25",
+      "tasks": [
+        {"subject": "DWH", "task": "Last-Minute Review", "duration": "1 hour"},
+        {"subject": "Rest", "task": "Relax before the exam"}
+      ]
+    },
+    {
+      "date": "08/01/25",
+      "tasks": [
+        {"subject": "ML", "task": "Study Cross Validation & Regularized Least Squares", "duration": "3 hours"},
+        {"subject": "ML", "task": "Study Support Vector Machines & SGD", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "09/01/25",
+      "tasks": [
+        {"subject": "ML", "task": "Study Kernel Functions & Feature Maps", "duration": "3 hours"},
+        {"subject": "ML", "task": "Study Logistic Regression", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "10/01/25",
+      "tasks": [
+        {"subject": "ML", "task": "Study Neural Networks & Convolutional Neural Networks", "duration": "3 hours"},
+        {"subject": "ML", "task": "Study Bayesian Models", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "11/01/25",
+      "tasks": [
+        {"subject": "ML", "task": "Study Interpretability Models: Decision Trees", "duration": "3 hours"},
+        {"subject": "ML", "task": "Study K-Means & Unsupervised Learning", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "12/01/25",
+      "tasks": [
+        {"subject": "ML", "task": "Final Review of ML Topics", "duration": "3 hours"},
+        {"subject": "ML", "task": "Practice ML Problems", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "13/01/25",
+      "tasks": [
+        {"subject": "ML", "task": "Final Review and Weak Areas", "duration": "3 hours"},
+        {"subject": "Rest", "task": "Relaxation"}
+      ]
+    },
+    {
+      "date": "14/01/25",
+      "tasks": [
+        {"subject": "ML", "task": "Final Review", "duration": "3 hours"},
+        {"subject": "Rest", "task": "Relax before the exam"}
+      ]
+    },
+    {
+      "date": "15/01/25",
+      "tasks": [
+        {"subject": "ML", "task": "Final Review of ML Topics", "duration": "3 hours"},
+        {"subject": "Rest", "task": "Relax and prepare for the exam"}
+      ]
+    },
+    {
+      "date": "16/01/25",
+      "tasks": [
+        {"subject": "ML Exam", "task": "Morning"},
+        {"subject": "Rest", "task": "Relax after the exam"},
+        {"subject": "DC", "task": "Start focusing on DC topics"}
+      ]
+    },
+    {
+      "date": "17/01/25",
+      "tasks": [
+        {"subject": "DC", "task": "Study Introduction & Transactions (ACID, CAP)", "duration": "3 hours"},
+        {"subject": "DC", "task": "Study Consensus & Zookeeper", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "18/01/25",
+      "tasks": [
+        {"subject": "DC", "task": "Study Google Cloud Spanner & Erasure Coding", "duration": "3 hours"},
+        {"subject": "DC", "task": "Study Queueing & Scheduling", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "19/01/25",
+      "tasks": [
+        {"subject": "DC", "task": "Study Tor & Search in P2P Systems", "duration": "3 hours"},
+        {"subject": "DC", "task": "Study BitTorrent & Eventual Consistency", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "20/01/25",
+      "tasks": [
+        {"subject": "DC", "task": "Study The MapReduce Paradigm", "duration": "3 hours"},
+        {"subject": "DC", "task": "Study Apache Hadoop", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "21/01/25",
+      "tasks": [
+        {"subject": "DC", "task": "Study Apache Spark & RDD", "duration": "3 hours"},
+        {"subject": "DC", "task": "Study Mlib", "duration": "2 hours"}
+      ]
+    },
+    {
+      "date": "22/01/25",
+      "tasks": [
+        {"subject": "DC", "task": "Review weak areas", "duration": "3 hours"},
+        {"subject": "Rest", "task": "Relax"}
+      ]
+    },
+    {
+      "date": "23/01/25",
+      "tasks": [
+        {"subject": "DC", "task": "Final review of weak areas", "duration": "3 hours"},
+        {"subject": "Rest", "task": "Relaxation"}
+      ]
+    },
+    {
+      "date": "27/01/25",
+      "tasks": [
+        {"subject": "DC Exam", "task": "Morning"},
+        {"subject": "Celebrate", "task": "Your success!"}
+      ]
     }
   ]
-  
+
